@@ -12,11 +12,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
+  
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/${GITHUB_REPOSITORY#*/}
+          DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/${GITHUB_REPOSITORY#*-}
           VERSION=latest
           SHORTREF=${GITHUB_SHA::8}
 
